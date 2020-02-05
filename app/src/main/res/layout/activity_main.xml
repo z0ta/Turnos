@@ -63,12 +63,13 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/button_rounded"
+        android:onClick="onClick"
         android:text="Ingresar"
         app:layout_constraintBottom_toTopOf="@+id/btnregistrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtpassword"
-        android:background="@drawable/button_rounded"/>
+        app:layout_constraintTop_toBottomOf="@+id/txtpassword" />
 
     <Button
         android:id="@+id/btnregistrar"
@@ -79,12 +80,13 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="361dp"
+        android:background="@drawable/button_rounded"
+        android:onClick="onClick2"
         android:text="Registrarse"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btningresar"
-        android:background="@drawable/button_rounded"/>
+        app:layout_constraintTop_toBottomOf="@+id/btningresar" />
 
     <ImageView
         android:id="@+id/imageView3"
