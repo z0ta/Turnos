@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         StringBuilder result = null;
 
         try {
-            url=new URL("http://192.168.1.48/Turnos/valida.php?correo="+CORREO+"&pass="+PASS);
+            url=new URL("http://192.168.1.5/Turnos/valida.php?correo="+CORREO+"&pass="+PASS);
             HttpURLConnection conection =(HttpURLConnection)url.openConnection();
             respuesta= conection.getResponseCode();
 

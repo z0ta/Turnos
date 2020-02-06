@@ -3,6 +3,8 @@ package com.uisrael.turnos;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.ProgressDialog;
+import android.media.session.MediaSessionManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +24,7 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,6 +40,7 @@ public class registroUsu extends AppCompatActivity {
 
     EditText txtusu,txtco,txtpass,txtidusu;
     Button btnguardar,btneliusu,btnbususu,btnediusu;
+
 
     RequestQueue requestQueue;
 
@@ -54,18 +58,18 @@ public class registroUsu extends AppCompatActivity {
         btnbususu=(Button) findViewById(R.id.btnbususu);
         btnediusu=(Button) findViewById(R.id.btnediusu);
 
-        btnediusu.setOnClickListener(new View.OnClickListener() {
+        /*btnediusu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new editarusu().execute("http://192.168.1.48/Turnos/editarUsu.php");
+                editarusu("http://192.168.1.5/Turnos/editarUsu.php");
             }
-        });
+        });*/
 
         btnbususu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                new ConsultarDatos().execute("http://192.168.1.48/Turnos/consulta.php?idusu="+txtidusu.getText().toString());
+                new ConsultarDatos().execute("http://192.168.1.5/Turnos/consulta.php?idusu="+txtidusu.getText().toString());
 
             }
         });
@@ -74,7 +78,7 @@ public class registroUsu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                new CargarDatos().execute("http://192.168.1.48/Turnos/registro.php?nombreusu="+txtusu.getText().toString()+"&correousu="+txtco.getText().toString()+"&passusu="+txtpass.getText().toString());
+                new CargarDatos().execute("http://192.168.1.5/Turnos/registro.php?nombreusu="+txtusu.getText().toString()+"&correousu="+txtco.getText().toString()+"&passusu="+txtpass.getText().toString());
 
             }
         });
@@ -82,7 +86,7 @@ public class registroUsu extends AppCompatActivity {
         btneliusu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eliminarServicio("http://192.168.1.48/Turnos/eliminarTurnos.php");
+                eliminarServicio("http://192.168.1.5/Turnos/eliminarTurnos.php");
             }
         });
 
@@ -180,35 +184,86 @@ public class registroUsu extends AppCompatActivity {
         reader.read(buffer);
         return new String(buffer);
     }
+/*
+    private void editarusu(String URL){
+        StringRequest stringRequest= new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
 
-    private class editarusu extends AsyncTask<String, Void, String> {
-        @Override
-        protected String doInBackground(String... urls) {
-
-            // params comes from the execute() call: params[0] is the url.
-            try {
-                return downloadUrl(urls[0]);
-            } catch (IOException e) {
-                return "Unable to retrieve web page. URL may be invalid.";
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(getApplicationContext(),"operacion exitosa",Toast.LENGTH_SHORT).show();
             }
-        }
-        // onPostExecute displays the results of the AsyncTask.
-        @Override
-        protected void onPostExecute(String result) {
-
-            JSONArray ja = null;
-            try {
-                ja = new JSONArray(result);
-                txtusu.setText(ja.getString(1));
-                txtco.setText(ja.getString(2));
-                txtpass.setText(ja.getString(3));
-
-            } catch (JSONException e) {
-                e.printStackTrace();
+        },new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error){
+                Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
             }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> parametros = new HashMap<String, String>();
+                parametros.put("idusu",txtidusu.getText().toString());
+                parametros.put("nombreusu",txtusu.getText().toString());
+                parametros.put("correousu",txtco.getText().toString());
+                parametros.put("passusu",txtpass.getText().toString());
+                return parametros;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
 
-        }
-    }
+    }*/
+/*
+    private void editarusu(String URL){
+        final String idusu = this.txtidusu.getText().toString();
+        final String nombreusu = this.txtusu.getText().toString();
+        final String correousu = this.txtco.getText().toString();
+        final String passusu = this.txtpass.getText().toString();
+
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("guardado");
+        progressDialog.show();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        progressDialog.dismiss();
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String sucess = jsonObject.getString("sucess");
+
+                            if (sucess.equals("1")) {
+                                Toast.makeText(registroUsu.this, "sucess", Toast.LENGTH_SHORT).show();
+                                //sessionManager.createSession(idusu, nombreusu, correousu, passusu);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(registroUsu.this, "error" + e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(registroUsu.this, "error" + error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params = new HashMap<>();
+                params.put("idusu",idusu);
+                params.put("nombreusu",nombreusu);
+                params.put("correousu",correousu);
+                params.put("passusu",passusu);
+                return super.getParams();
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }*/
+
 
     private void eliminarServicio(String URL){
         StringRequest stringRequest= new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
@@ -236,6 +291,9 @@ public class registroUsu extends AppCompatActivity {
         requestQueue.add(stringRequest);
 
     }
+
+
+
 
 
 
