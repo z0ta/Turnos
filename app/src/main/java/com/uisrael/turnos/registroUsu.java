@@ -58,18 +58,18 @@ public class registroUsu extends AppCompatActivity {
         btnbususu=(Button) findViewById(R.id.btnbususu);
         btnediusu=(Button) findViewById(R.id.btnediusu);
 
-        /*btnediusu.setOnClickListener(new View.OnClickListener() {
+        btnediusu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editarusu("http://192.168.1.5/Turnos/editarUsu.php");
+                editarusu("http://130.1.35.203/Turnos/editarUsu.php");
             }
-        });*/
+        });
 
         btnbususu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                new ConsultarDatos().execute("http://192.168.1.5/Turnos/consulta.php?idusu="+txtidusu.getText().toString());
+                new ConsultarDatos().execute("http://130.1.35.203/Turnos/consulta.php?idusu="+txtidusu.getText().toString());
 
             }
         });
@@ -78,7 +78,7 @@ public class registroUsu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                new CargarDatos().execute("http://192.168.1.5/Turnos/registro.php?nombreusu="+txtusu.getText().toString()+"&correousu="+txtco.getText().toString()+"&passusu="+txtpass.getText().toString());
+                new CargarDatos().execute("http://130.1.35.203/Turnos/registro.php?nombreusu="+txtusu.getText().toString()+"&correousu="+txtco.getText().toString()+"&passusu="+txtpass.getText().toString());
 
             }
         });
@@ -86,7 +86,7 @@ public class registroUsu extends AppCompatActivity {
         btneliusu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eliminarServicio("http://192.168.1.5/Turnos/eliminarTurnos.php");
+                eliminarServicio("http://130.1.35.203/Turnos/eliminarTurnos.php");
             }
         });
 
@@ -184,7 +184,7 @@ public class registroUsu extends AppCompatActivity {
         reader.read(buffer);
         return new String(buffer);
     }
-/*
+
     private void editarusu(String URL){
         StringRequest stringRequest= new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
 
@@ -201,7 +201,7 @@ public class registroUsu extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> parametros = new HashMap<String, String>();
-                parametros.put("idusu",txtidusu.getText().toString());
+                parametros.put("idusu", txtidusu.getText().toString());
                 parametros.put("nombreusu",txtusu.getText().toString());
                 parametros.put("correousu",txtco.getText().toString());
                 parametros.put("passusu",txtpass.getText().toString());
@@ -211,7 +211,7 @@ public class registroUsu extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
 
-    }*/
+    }
 /*
     private void editarusu(String URL){
         final String idusu = this.txtidusu.getText().toString();
