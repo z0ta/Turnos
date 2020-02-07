@@ -9,15 +9,111 @@
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginBottom="16dp"
         android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/textView29"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/espe" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginBottom="25dp"
+        android:text="Registro Especialidad"
+        app:layout_constraintBottom_toTopOf="@+id/txtidespe"
+        app:layout_constraintStart_toStartOf="@+id/txtidespe" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="195dp"
+        android:text="Buscar por ID"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtidespe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="1dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/textView30"
+        app:layout_constraintTop_toTopOf="@+id/textView30" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="46dp"
+        android:text="Descripcion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtidespe" />
+
+    <EditText
+        android:id="@+id/txtdesespe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView31"
+        app:layout_constraintStart_toEndOf="@+id/textView31" />
+
+    <Button
+        android:id="@+id/btnregespe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:text="Registrar"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnbusespe"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnbusespe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:text="BUSCAR"
+        app:layout_constraintEnd_toStartOf="@+id/btnediespe"
+        app:layout_constraintTop_toBottomOf="@+id/txtdesespe" />
+
+    <Button
+        android:id="@+id/btnediespe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="EDITAR"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnbusespe"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnelimespe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="45dp"
+        android:text="ELIMINAR"
+        app:layout_constraintStart_toStartOf="@+id/btnbusespe"
+        app:layout_constraintTop_toBottomOf="@+id/btnbusespe" />
 </androidx.constraintlayout.widget.ConstraintLayout>

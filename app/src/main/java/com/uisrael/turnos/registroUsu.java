@@ -61,7 +61,7 @@ public class registroUsu extends AppCompatActivity {
         btnediusu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editarusu("http://130.1.35.203/Turnos/editarUsu.php");
+                editarusu("http://192.168.1.48Turnos/editarUsu.php");
             }
         });
 
@@ -69,7 +69,7 @@ public class registroUsu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                new ConsultarDatos().execute("http://130.1.35.203/Turnos/consulta.php?idusu="+txtidusu.getText().toString());
+                new ConsultarDatos().execute("http://192.168.1.48/Turnos/consulta.php?idusu="+txtidusu.getText().toString());
 
             }
         });
@@ -78,7 +78,7 @@ public class registroUsu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                new CargarDatos().execute("http://130.1.35.203/Turnos/registro.php?nombreusu="+txtusu.getText().toString()+"&correousu="+txtco.getText().toString()+"&passusu="+txtpass.getText().toString());
+                new CargarDatos().execute("http://192.168.1.48/Turnos/registro.php?nombreusu="+txtusu.getText().toString()+"&correousu="+txtco.getText().toString()+"&passusu="+txtpass.getText().toString());
 
             }
         });
@@ -86,7 +86,7 @@ public class registroUsu extends AppCompatActivity {
         btneliusu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eliminarServicio("http://130.1.35.203/Turnos/eliminarTurnos.php");
+                eliminarServicio("http://192.168.1.48/Turnos/eliminarTurnos.php");
             }
         });
 

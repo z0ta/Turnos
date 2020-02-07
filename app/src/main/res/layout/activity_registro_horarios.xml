@@ -25,10 +25,22 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="13dp"
         android:layout_marginRight="13dp"
-        android:layout_marginBottom="26dp"
+        android:layout_marginBottom="17dp"
         android:text="Registrar Horarios"
-        app:layout_constraintBottom_toTopOf="@+id/txtdeshora"
+        app:layout_constraintBottom_toTopOf="@+id/txtidhora"
         app:layout_constraintEnd_toEndOf="@+id/imageView7" />
+
+    <EditText
+        android:id="@+id/txtdeshora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/txtidhora"
+        app:layout_constraintTop_toBottomOf="@+id/txtidhora" />
 
     <TextView
         android:id="@+id/textView27"
@@ -40,36 +52,15 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/txtdeshora"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/txtdeshora"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="29dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txthoraini"
-        app:layout_constraintStart_toStartOf="@+id/txthor" />
-
     <TextView
         android:id="@+id/textView28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:layout_marginLeft="27dp"
-        android:layout_marginTop="283dp"
         android:text="Hora Inicio"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/txthoraini"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="hh:mm"
-        android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView28"
-        app:layout_constraintStart_toStartOf="@+id/txtdeshora" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/txthoraini"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/horafin"
@@ -77,10 +68,52 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:layout_marginLeft="27dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="53dp"
         android:text="Hora Fin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <Button
+        android:id="@+id/btnreghora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:text="Registrar"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnbushora"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/txthoraini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:ems="10"
+        android:hint="hh:mm"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/txtdeshora"
+        app:layout_constraintTop_toBottomOf="@+id/txtdeshora" />
+
+    <Button
+        android:id="@+id/btnelimhora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:text="Eliminar"
+        app:layout_constraintEnd_toEndOf="@+id/btnbushora"
+        app:layout_constraintTop_toBottomOf="@+id/btnbushora" />
+
+    <Button
+        android:id="@+id/btnedithora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:text="Editar"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnbushora"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/txthorafin"
@@ -96,16 +129,6 @@
         app:layout_constraintTop_toBottomOf="@+id/txthoraini" />
 
     <Button
-        android:id="@+id/btnreghora"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:text="Registrar"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnbushora"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
         android:id="@+id/btnbushora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -116,24 +139,27 @@
         app:layout_constraintStart_toStartOf="@+id/txthorafin"
         app:layout_constraintTop_toBottomOf="@+id/txthorafin" />
 
-    <Button
-        android:id="@+id/btnedithora"
+    <EditText
+        android:id="@+id/txtidhora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="33dp"
-        android:layout_marginRight="33dp"
-        android:text="Editar"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnbushora"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="186dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/txthor"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnelimhora"
+    <TextView
+        android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="39dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:text="Eliminar"
-        app:layout_constraintEnd_toEndOf="@+id/btnbushora"
-        app:layout_constraintTop_toBottomOf="@+id/btnbushora" />
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="9dp"
+        android:text="Buscar por ID"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtidhora" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
