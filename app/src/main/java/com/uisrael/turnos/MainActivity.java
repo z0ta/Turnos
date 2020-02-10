@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button btningresar,btnregistrar;
     EditText txtcorreo,txtpassword;
+    ImageButton ivmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +34,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txtpassword=(EditText)findViewById(R.id.txtpassword);
         btningresar=(Button) findViewById(R.id.btningresar);
         btnregistrar=(Button) findViewById(R.id.btnregistrar) ;
+        ivmap = (ImageButton) findViewById(R.id.ivmap);
 
         btningresar.setOnClickListener(this);
+
+        ivmap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent int4 = new Intent(MainActivity.this,MapsActivity.class);
+                startActivity(int4);
+            }
+        });
 
 
     }
