@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#202732">
+    android:background="#202732"
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -28,11 +28,11 @@
         android:layout_marginTop="160dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="197dp"
+        android:layout_marginBottom="205dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintBottom_toTopOf="@+id/ibfb"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,10 +45,10 @@
         android:layout_marginLeft="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/btningresar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +62,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/button_rounded"
         android:onClick="onClick"
         android:text="Ingresar"
@@ -79,56 +79,57 @@
         android:layout_marginLeft="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="361dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/button_rounded"
         android:onClick="onClick2"
         android:text="Registrarse"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ivmap"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btningresar" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="93dp"
-        android:layout_marginLeft="93dp"
-        android:layout_marginEnd="125dp"
-        android:layout_marginRight="125dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView4"
-        app:srcCompat="@drawable/fb" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="93dp"
-        android:layout_marginRight="93dp"
-        android:layout_marginBottom="279dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/txtcorreo"
-        app:srcCompat="@drawable/tw" />
-
     <ImageButton
         android:id="@+id/ivmap"
         android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginBottom="251dp"
         android:scaleType="centerInside"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+        app:layout_constraintStart_toEndOf="@+id/ibfb"
         app:layout_constraintTop_toBottomOf="@+id/btnregistrar"
         app:srcCompat="@drawable/map" />
+
+    <ImageButton
+        android:id="@+id/ibfb"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginRight="41dp"
+        android:layout_marginBottom="251dp"
+        android:scaleType="centerInside"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivmap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtcorreo"
+        app:srcCompat="@drawable/fb" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/ivmap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivmap"
+        app:layout_constraintTop_toTopOf="@+id/ibfb"
+        app:srcCompat="@drawable/tw" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

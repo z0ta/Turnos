@@ -110,7 +110,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/txtcimed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -139,8 +139,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editText4"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintStart_toStartOf="@+id/txtcimed"
+        app:layout_constraintTop_toBottomOf="@+id/txtcimed" />
 
     <TextView
         android:id="@+id/textView21"
@@ -194,21 +194,10 @@
         android:layout_marginEnd="2dp"
         android:layout_marginRight="2dp"
         android:ems="10"
+        android:hint="aaaa/dd/mm"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="@+id/txtdirmed"
         app:layout_constraintTop_toBottomOf="@+id/txtdirmed" />
-
-    <Spinner
-        android:id="@+id/spinnerespe"
-        android:layout_width="217dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="125dp"
-        android:layout_marginBottom="126dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txttelfmed"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
     <Button
         android:id="@+id/btnagregarmed"
@@ -241,4 +230,19 @@
         android:text="Editar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/txtidespe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView23"
+        app:layout_constraintTop_toBottomOf="@+id/txttelfmed" />
 </androidx.constraintlayout.widget.ConstraintLayout>
